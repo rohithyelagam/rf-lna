@@ -40,7 +40,6 @@ def predict():
     nf = float(request.form["nf"])
 
     output = decode(model.predict([encode([opfreq,s11,s21,nf],data)])[0],data)
-    print(output[0])
     return render_template('index.html', lg=f'{output[0]}',ls=f'{output[1]}',ld=f'{output[2]}',w=f'{output[3]}')
 
 if __name__ == "__main__":
