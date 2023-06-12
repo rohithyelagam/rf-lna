@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>My Machine Learning Model</title>
+
+  <!-- Quick Start: CSS -->
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body style="background-color: rgb(50, 151, 253);">
+  <div class="main">
+
+    <div class="header">RF-LNA PREDICTION</div>
+    <div class="data">
+      <div class="data-left">
+        <div class="text-1">RF-LNA stands for Radio Frequency Low-Noise Amplifier. 
+          It is an electronic device used in radio frequency (RF) systems to amplify
+           weak signals while minimizing the addition of noise.
+        </div>
+        <div class="text-2">The RF-LNA circuit commonly uses an inductive load and a cascade common-source
+          stage with degeneration as its topology which is shown below
+        </div>
+        <div class="rf-lna">
+          <img src="{{ url_for('static',filename='rf-lna.png') }}" alt="rf-lna"/>
+        </div>
+      </div>
+
+      <div class="data-right">
+
+        <div class="title">A Machine Learning algorithm is used to determine the optimal architecture of a
+          Radio Frequency Low Noise Amplifier.
+        </div>
+
+        <div class="input-range">
+          <div class="input-range-text">Range of Input Parameters to predict using ML Model:</div>
+          <div class="table">
+            <table>
+              <tr>
+                <th>Input Parameter</th>
+                <th>Low End</th>
+                <th>High End</th>
+              </tr>
+              
+              <tr>
+                <td>Operating Frequency (Hz)</td>
+                <td>1900000000</td>
+                <td>3160000000</td>
+              </tr>
+
+              <tr>
+                <td>S11 (dB20)</td>
+                <td>-70.80</td>
+                <td>-15.13</td>
+              </tr>
+
+              <tr>
+                <td>S21 (dB20)</td>
+                <td>5.03</td>
+                <td>18.02</td>
+              </tr>
+
+              <tr>
+                <td>Noise Figure (dB10)</td>
+                <td>1.57</td>
+                <td>2.32</td>
+              </tr>
+              
+            </table>
+          </div>
+        </div>
+
+        <div class="search">
+          <div class="search-left">
+            <form action="{{ url_for('predict')}}" method="post">
+              <div>
+                <label>Operating Frequency : </label><br/>
+                <input type="text" name="opfreq" placeholder="Operating Frequency" required="required" /><br/>
+              </div>
+  
+              <div>
+                <label>S11 (dB20)          : </label><br/>
+                <input type="text" name="s11" placeholder="S11" required="required"/><br/>
+              </div>
+              
+              <div>
+                <label>S21 (dB20)          : </label><br/>
+                <input type="text" name="s21" placeholder="S21" required="required"/><br/>
+              </div>
+  
+              <div>
+                <label>Noise Figure, NF    : </label><br/>
+                <input type="text" name="nf" placeholder="nf" required="required"/><br/>
+              </div>
+  
+              <button type="submit" class="btn btn-primary btn-block btn-large">Predict Value!</button>
+            </form>
+          </div>
+
+          <div class="search-right">
+            <div class="table">
+              <table>
+                <tr>
+                  <th>Output Parameter</th>
+                  <th>Predicted Value</th>
+                </tr>
+                
+                <tr>
+                  <td>Lg </td>
+                  <td>{{lg}}</td>
+                </tr>
+  
+                <tr>
+                  <td>Ls</td>
+                  <td>{{ls}}</td>
+                </tr>
+  
+                <tr>
+                  <td>Ld</td>
+                  <td>{{ld}}</td>
+                </tr>
+  
+                <tr>
+                  <td>W</td>
+                  <td>{{w}}</td>
+                </tr>
+                
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</body>
+  
+</html>

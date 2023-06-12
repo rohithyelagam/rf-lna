@@ -1,0 +1,89 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgb(172, 214, 248);
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+.header{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 40px;
+    width: 100%;
+}
+.data{
+    display: flex;
+}
+.data-left{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.553);
+    margin: 15px;
+    border-radius: 5px;
+}
+.text-1{
+    display: flex;
+    padding: 10px;
+    text-align: center;
+}
+.text-2{
+    display: flex;
+    padding: 10px;
+    text-align: center;
+}
+.rf-lna{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.rf-lna>img{
+    width: 450px;
+    border-radius: 5px;
+}
+.data-right{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.599);
+    margin: 15px 15px 15px 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.input-range-text{
+     display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.search{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.search-left{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
